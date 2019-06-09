@@ -1,3 +1,16 @@
 #buttons{
     padding: 10px;
 }
+.topic{
+    padding: 10px;
+    margin: 5px;
+    font-family: 'Cardo', serif;
+    font-weight: bold;
+    font-size: 15px;
+    background-color:red;
+    color: white;
+    text-transform: uppercase; 
+}
+body{
+    background-color: black;
+}
