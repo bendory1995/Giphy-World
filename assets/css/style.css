@@ -1,5 +1,6 @@
 #buttons{
     padding: 10px;
+    background-color: black;
 }
 .topic{
     padding: 10px;
@@ -11,10 +12,18 @@
     color: white;
     text-transform: uppercase; 
 }
-body{
-    background-color: black;
-}
+
 img{
     max-height: 300px;
     padding: 10px;
+}
+#gifs{
+    background-color: black;
+}
+html{
+    background-color: black;
+}
+
+#gif-form{
+    background-color: black;
 }
