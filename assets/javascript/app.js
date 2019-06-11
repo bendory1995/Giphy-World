@@ -1,51 +1,50 @@
-var topics = ["augmented reality", "computer", "programming", "iphone", "macbook", "apple watch", "programmer", "virtual reality", "facebook", "amazon", "netflix", "google", "kindle"];
-
-
+// an array containing all the topics.
+var gifs = ["augmented reality", "computer", "programming", "iphone", "macbook", "apple watch", "programmer", "virtual reality", "facebook", "amazon", "netflix", "google", "kindle"];
 
 function displayGif(){
-    $("#gifs").empty();
-
-    var gif = $(this).attr("data-topic");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ gif +"&api_key=gnnlfsOnrD9U9TqUGuqNcMPbG4DEFJ4z&limit=10 ";
+    $("#gifs-view").empty();
+    var gif = $(this).attr("data-name");
+    var queryURL ="http://api.giphy.com/v1/gifs/search?q="+ gif +"&api_key=gnnlfsOnrD9U9TqUGuqNcMPbG4DEFJ4z&limit=10";
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
         var gifDiv = $("<div class= 'gif'>");
-        
-        var giffs = response.data;
-        for (i in giffs){
-            //gifDiv.append("<span>" + giffs[i].rating + "</span>");
-            gifDiv.append("<img id =  '" + i + "' + src ='"+ giffs[i].images.original_still.url+"' >");
+        var gifData = response.data;
+        for (i in gifData){
+            var gifStillUrl = response.data[i].images.original_still.url;
+            var gifAnimateUrl = response.data[i].url;
+            var imgURL = response.data[i].images.original_still.url;
+            var image = $("<img>").attr("src", imgURL);
+            image.attr("data-still", gifStillUrl);
+            image.attr("data-animate", gifAnimateUrl);
+            gifDiv.append(image);
         }
-        $("#gifs").append(gifDiv);
-    });
+        $("#gifs-view").prepend(gifDiv);
+
+        
+    })
 }
 
 function renderButtons(){
-    $("#buttons").empty();
+    $("#buttons-view").empty();
+    for (var i = 0; i < gifs.length; i++){
+        var a = $("<button>");
+        a.addClass("gif-btn");
+        a.attr("data-name",gifs[i]);
+        a.text(gifs[i]);
+        $("#buttons-view").append(a);
+    } 
 
-    for (var i = 0; i < topics.length; i++) {
-        var topicBtn = $("<button>");
-        topicBtn.addClass("topic");
-        topicBtn.attr("data-topic", topics[i]);
-        topicBtn.text(topics[i]);
-        $("#buttons").append(topicBtn);    
-    }
 }
 
 $("#add-gif").on("click", function(event){
-    console.log("YES");
     event.preventDefault();
     var gif = $("#gif-input").val().trim();
-    console.log(gif);
-    topics.push(gif);
+    gifs.push(gif);
     renderButtons();
-    console.log(topics);
-    
 })
 
-$(document).on("click", ".topic", displayGif);
+$(document).on("click", ".gif-btn", displayGif);
 renderButtons();
-

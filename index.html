@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang = "en-us">
+<html lang="en-us">
 
 <head>
-<meta charset = "UTF-8">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
-<title> TECH WORLD!</title>
+    <meta charset="UTF-8">
+    <!--linking css from local-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Linking Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Linking google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+    <!-- title of the page-->
+    <title> TECH WORLD!</title>
 
 </head>
+
 <body>
-    <div id = "buttons"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type = "text/javascript" src = "assets/javascript/app.js"></script>
-    
-    <form id = "gif-form">
-        <!-- <label for = "gif-input">Add a Gif!</label> -->
-        <input type = "text" id= "gif-input">
-        <input id = "add-gif" type="submit" value="Add a Gif!">
-    </form>
 
-    <div id = "gifs"></div>
+    <div class="container">
+        <h1>Giphy World!</h1>
+        <!-- topic buttons on the top-->
+        <div id="buttons-view"></div>
 
+        <form id="gif-form">
+            <!-- <label for = "gif-input">Add a Gif!</label> -->
+            <input type="text" id="gif-input">
+            <input id="add-gif" type="submit" value="Add a Gif!">
+        </form>
+
+        <div id="gifs-view"></div>
+
+    </div>
+    <!-- jquery link-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- linking local javascript file-->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 
 </body>
+
 </html>
