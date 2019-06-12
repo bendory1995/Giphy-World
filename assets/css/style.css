@@ -1,0 +1,28 @@
+h1{
+    color: yellow;
+}
+.gif-btn{
+    background-color: yellow;
+    border: 2px solid red;
+    font-size: 20px;
+    border-radius: 8px;
+    margin: 3px;
+}
+#gif-input{
+    border-radius: 8px;
+    margin: 3px;
+}
+#add-gif{
+    border-radius: 8px;
+    margin:3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img{
+    max-height: 300px;
+    margin: 5px;
+}
+.gif{
+    color: white;
+    
+}
